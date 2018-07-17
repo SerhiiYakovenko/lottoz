@@ -1,0 +1,4 @@
+Errors:
+  password: 'Your password must have a minimum of 8 characters & contain at least 1 letter and 1 number'
+  email: 'Please provide a valid email address'
+  age: 'You must be above 18'
