@@ -1,5 +1,7 @@
 require 'faker'
 
+# Creating new user with pre-filled data, data can be updated if needed
+
 class User
   attr_accessor :email, :first_name, :last_name, :password, :date, :month, :year,
                 :country, :address, :city, :postcode

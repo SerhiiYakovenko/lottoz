@@ -5,8 +5,11 @@ Given(/^I visit '([^"]*)' page$/) do |page|
   when 'Sign up'
     @signup_page = SignupPage.new
     @signup_page.load
+  when 'My account'
+    @my_account_page = MyAccountPage.new
+    @my_account_page.load
   else
-    raise 'Only Homepage and Sign up page are supported'
+    raise 'Only Homepage, My account and Sign up page are supported'
   end
 end
 

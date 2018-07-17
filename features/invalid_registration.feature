@@ -7,7 +7,7 @@ Feature: Visitor enters invalid registration credentials
     Given I visit 'Sign up' page
 
   Scenario: Visitor tries to register with all fields empty
-     When I try to register with all fields are empty
+     When I try to register with all fields are 'empty'
      Then I see 'Email, Password, Name, Surname, Address, City, Postcode' fields are 'required' at 'Sign up' page
 
   Scenario: Visitor tries to register with wrong password pattern

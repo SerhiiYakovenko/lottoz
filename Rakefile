@@ -47,28 +47,28 @@ end
 # Runner tasks
 
 desc 'Run Cucumber features for the first run'
-task :run_cucumber do
-  sh "cucumber features/" do
+task :run_cucumber do #, :profile do |t, args|
+  sh "parallel_cucumber features/" do
     #ignore errors
   end
 end
 
-desc 'Rerun Cucumber features according to the fails.txt'
-task :rerun_failed do
-  sh "cucumber artifacts/final_test_reports/fails.txt" do
+desc 'Rerun Cucumber features according to the fails.log'
+task :rerun_failed, :profile do |t, args|
+  sh "cucumber @artifacts/final_test_reports/fails.log -p rerun" do
     #ignore errors
   end
 end
 
 desc 'Rerun Cucumber features if there were failures in the first run'
-task :rerun_if_needed do
-  if File.file?("artifacts/final_test_reports/fails.txt")
-    if File.read("artifacts/final_test_reports/fails.txt").empty?
+task :rerun_if_needed do |t, args|
+  if File.file?('artifacts/final_test_reports/fails.log')
+    if File.read('artifacts/final_test_reports/fails.log').empty?
       puts 'Rerun step skipped, no fails occurred during the first run'
     else
-      fails = File.read("@artifacts/final_test_reports/fails.txt")
+      fails = File.read('artifacts/final_test_reports/fails.log')
 
-      File.open('artifacts/final_test_reports/fails.txt', 'w') do |file|
+      File.open('artifacts/final_test_reports/fails.log', 'w') do |file|
         file.puts fails.gsub('\n', ' ')
       end
 

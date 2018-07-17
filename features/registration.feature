@@ -1,12 +1,16 @@
-#Feature: User is able to register
-#  As a visitor
-#  I want to be able to register
-#  So I can become a Lottoz user
-#
-#  Scenario: New User successfully register
-#    Given I am not logged in visitor
-#      And I visit 'Sign up page'
-#     Then I see 'Email, Password, Name, Surname, Date, Month, Year, Country, Address, City, Postcode' fields are 'visible' at 'Sign up' page
-#     Then Sign up page is displayed correctly
-#     When I enter correct Sign up credentials at Sign up page
-#     Then I become 'logged in CCT Agent'
+Feature: User is able to register
+  As a visitor
+  I want to be able to register
+  So I can become a Lottoz user
+
+  Background:
+    Given I visit 'Homepage' page
+
+  Scenario: New User successfully register
+     Then I am 'not' logged in visitor
+     When I visit 'Sign up' page
+     Then I see 'Email, Password, Name, Surname, Date, Month, Year, Country, Address, City, Postcode' fields are 'visible' at 'Sign up' page
+     When I try to register with all fields are 'filled correctly'
+     Then I am 'already' logged in visitor
+     When I visit 'My account' page
+     Then I see 'Personal details, My Games, My Transaction, Deposit, My Lucky numbers, Logout link' fields are 'visible' at 'My account' page

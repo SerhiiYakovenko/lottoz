@@ -3,8 +3,8 @@ env: prod
 
 # URL's:
 prod:    https://www.lottoz.com
-prelive: TBA
+stage:   TBA
 test:    TBA
 
-# Devite type/version
+# Device type/version
 device: iPhone 6/7/8

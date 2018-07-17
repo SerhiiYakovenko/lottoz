@@ -12,8 +12,10 @@ module FeatureHelper
               @homepage
             when 'Sign up'
               @signup_page
+            when 'My account'
+              @my_account_page
             else
-              raise 'Only Homepage and Sign up page are supported'
+              raise 'Only Homepage, My account and Sign up page are supported'
             end
   end
 
