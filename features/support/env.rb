@@ -17,6 +17,7 @@ Capybara.app_host = CONFIG[ENVIRONMENT]
 require_all 'config'
 require_all 'pages'
 
+# setting device
 mobile_emulation = { deviceName: (CONFIG['device']) }
 caps = Selenium::WebDriver::Remote::Capabilities.chrome('chromeOptions' => { mobileEmulation: mobile_emulation } )
 
