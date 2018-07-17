@@ -57,3 +57,8 @@ Then(/^I see Error message: for '([^"]*)' field at '([^"]*)' page$/) do |field, 
 
   expect(@page.signup_body).to have_content error
 end
+
+Then(/^I see correct page title at '([^"]*)' page$/) do |page|
+  get_current_page(page)
+  expect(@page).to have_title DEFAULTS['Titles'][page]
+end
