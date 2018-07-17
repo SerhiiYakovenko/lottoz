@@ -8,14 +8,14 @@ module FeatureHelper
 
   def get_current_page(page)
     @page = case page
-            when 'Homepage'
+            when 'Home'
               @homepage
             when 'Sign up'
               @signup_page
             when 'My account'
               @my_account_page
             else
-              raise 'Only Homepage, My account and Sign up page are supported'
+              raise 'Only Home, My account and Sign up page are supported'
             end
   end
 

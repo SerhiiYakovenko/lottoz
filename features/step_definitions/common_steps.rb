@@ -1,6 +1,6 @@
 Given(/^I visit '([^"]*)' page$/) do |page|
   case page
-  when 'Homepage'
+  when 'Home'
     visit_homepage
   when 'Sign up'
     @signup_page = SignupPage.new
@@ -9,7 +9,7 @@ Given(/^I visit '([^"]*)' page$/) do |page|
     @my_account_page = MyAccountPage.new
     @my_account_page.load
   else
-    raise 'Only Homepage, My account and Sign up page are supported'
+    raise 'Only Home, My account and Sign up page are supported'
   end
 end
 

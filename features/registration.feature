@@ -3,10 +3,8 @@ Feature: User is able to register
   I want to be able to register
   So I can become a Lottoz user
 
-  Background:
-    Given I visit 'Homepage' page
-
   Scenario: New User successfully register
+     When I visit 'Home' page
      Then I am 'not' logged in visitor
      When I visit 'Sign up' page
      Then I see 'Email, Password, Name, Surname, Date, Month, Year, Country, Address, City, Postcode' fields are 'visible' at 'Sign up' page
